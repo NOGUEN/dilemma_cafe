@@ -20,6 +20,7 @@ class AppTextStyles {
     );
   }
 
+  static final TextStyle dillemaDisplay = _jalnanStyle(20);
   static final TextStyle dillemaSubhead3 = _jalnanStyle(18);
   static final TextStyle dillemaSubhead2 = _jalnanStyle(16);
   static final TextStyle dillemaSubhead1 = _jalnanStyle(14);
