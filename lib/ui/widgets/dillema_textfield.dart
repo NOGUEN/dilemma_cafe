@@ -36,3 +36,36 @@ class DillemaTextfield extends StatelessWidget {
     );
   }
 }
+
+class DillemaSearchTextField extends StatelessWidget {
+  const DillemaSearchTextField({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return TextField(
+      cursorColor: AppColors.primary,
+      onTapOutside: (event) {
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
+      style: AppTextStyles.body2Regular.copyWith(color: AppColors.white),
+      decoration: InputDecoration(
+        contentPadding: const EdgeInsets.all(15.0),
+        focusedBorder: OutlineInputBorder(
+          borderSide: const BorderSide(color: AppColors.primary, width: 2),
+          borderRadius: BorderRadius.circular(AppValues.boxBorderRadius),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderSide: const BorderSide(color: AppColors.gray, width: 1),
+          borderRadius: BorderRadius.circular(AppValues.boxBorderRadius),
+        ),
+        hintText: "검색어를 입력해주세요",
+        hintStyle:
+            AppTextStyles.body2Regular.copyWith(color: AppColors.lightGray),
+      ),
+      onSubmitted: (value) {
+        if (value.isNotEmpty) debugPrint(value);
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
+    );
+  }
+}
