@@ -1,4 +1,5 @@
 import 'package:dillema_cafe/core/viewmodels/base_viewmodel.dart';
+import 'package:flutter/material.dart';
 
 class DillemaViewModel extends BaseModel {
   // HomeViewModel({
@@ -10,6 +11,7 @@ class DillemaViewModel extends BaseModel {
   // List<Post> posts = <Post>[];
 
   List<bool> chosenDillema = [false, false];
+  TextEditingController textEditingController = TextEditingController();
 
   void pickDillema(int index) {
     if (index == 0) {
