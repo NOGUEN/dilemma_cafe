@@ -72,7 +72,7 @@ class _DillemaPickButtonState extends State<DillemaPickButton> {
               width: double.infinity,
               decoration: BoxDecoration(
                 border: Border.all(
-                  width: 2,
+                  width: 5,
                   color: AppColors.primary,
                   strokeAlign: BorderSide.strokeAlignInside,
                 ),

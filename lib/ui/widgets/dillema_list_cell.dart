@@ -8,15 +8,18 @@ class DillemaListCell extends StatelessWidget {
     required this.titleText,
     required this.likeCount,
     required this.participateCount,
+    required this.onTapFunction,
   });
 
   final String titleText;
   final int likeCount;
   final int participateCount;
+  final void Function() onTapFunction;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      onTap: onTapFunction,
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8.0),
@@ -49,7 +52,7 @@ class DillemaListCell extends StatelessWidget {
                       Text(
                         "$likeCount",
                         style: AppTextStyles.captionMedium.copyWith(
-                          color: AppColors.gray,
+                          color: AppColors.lightGray,
                         ),
                       ),
                     ],
@@ -60,7 +63,7 @@ class DillemaListCell extends StatelessWidget {
                       Text(
                         "$participateCount명 참여",
                         style: AppTextStyles.captionMedium.copyWith(
-                          color: AppColors.gray,
+                          color: AppColors.lightGray,
                         ),
                       ),
                     ],

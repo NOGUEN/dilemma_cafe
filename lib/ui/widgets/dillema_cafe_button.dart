@@ -36,7 +36,7 @@ class _DillemaCafeButtonState extends State<DillemaCafeButton> {
           child: Text(
             widget.titleText,
             style: AppTextStyles.dillemaDisplay.copyWith(
-              color: AppColors.black,
+              color: widget.isAvailable ? AppColors.black : AppColors.gray,
             ),
           ),
         ),
