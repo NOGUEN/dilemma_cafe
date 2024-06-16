@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
         title: 'Dillema Cafe',
         theme: ThemeData(
             primarySwatch: Colors.blue,
+            primaryColor: AppColors.primary,
             scaffoldBackgroundColor: AppColors.background,
             appBarTheme: const AppBarTheme(
               backgroundColor: AppColors.background,
