@@ -35,10 +35,12 @@ class MainCell extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(titleText, style: AppTextStyles.dillemaSubhead3),
+                Text(titleText,
+                    style: AppTextStyles.dillemaSubhead3.copyWith(height: 1.2)),
+                const SizedBox(height: 3),
                 Text(
                   descriptionText,
-                  style: AppTextStyles.captionRegular,
+                  style: AppTextStyles.captionRegular.copyWith(height: 1.2),
                 ),
                 const Spacer(),
                 Align(
