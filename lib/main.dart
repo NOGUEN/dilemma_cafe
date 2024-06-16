@@ -6,10 +6,12 @@ import 'package:provider/provider.dart';
 import 'package:dillema_cafe/ui/router.dart' as router;
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
@@ -17,12 +19,19 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Dillema Cafe',
         theme: ThemeData(
-            primarySwatch: Colors.blue,
-            primaryColor: AppColors.primary,
-            scaffoldBackgroundColor: AppColors.background,
-            appBarTheme: const AppBarTheme(
-              backgroundColor: AppColors.background,
-            )),
+          primarySwatch: Colors.blue,
+          primaryColor: AppColors.primary,
+          scaffoldBackgroundColor: AppColors.background,
+          appBarTheme: const AppBarTheme(
+            backgroundColor: AppColors.background,
+            iconTheme: IconThemeData(
+              color: AppColors.primary,
+            ),
+            actionsIconTheme: IconThemeData(
+              color: AppColors.white,
+            ),
+          ),
+        ),
         initialRoute: RoutePaths.Home,
         onGenerateRoute: router.Router.generateRoute,
       ),
