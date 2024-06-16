@@ -29,7 +29,7 @@ class DillemaTextfield extends StatelessWidget {
           borderRadius: BorderRadius.circular(AppValues.boxBorderRadius),
         ),
         enabledBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: AppColors.grey, width: 1),
+          borderSide: const BorderSide(color: AppColors.gray, width: 1),
           borderRadius: BorderRadius.circular(AppValues.boxBorderRadius),
         ),
       ),

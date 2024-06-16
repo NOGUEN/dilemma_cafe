@@ -49,7 +49,7 @@ class DillemaListCell extends StatelessWidget {
                       Text(
                         "$likeCount",
                         style: AppTextStyles.captionMedium.copyWith(
-                          color: AppColors.grey,
+                          color: AppColors.gray,
                         ),
                       ),
                     ],
@@ -60,7 +60,7 @@ class DillemaListCell extends StatelessWidget {
                       Text(
                         "$participateCount명 참여",
                         style: AppTextStyles.captionMedium.copyWith(
-                          color: AppColors.grey,
+                          color: AppColors.gray,
                         ),
                       ),
                     ],
