@@ -32,10 +32,12 @@ class _DillemaCafeButtonState extends State<DillemaCafeButton> {
           borderRadius: BorderRadius.circular(AppValues.boxBorderRadius),
           color: widget.isAvailable ? AppColors.primary : AppColors.darkGray,
         ),
-        child: Text(
-          widget.titleText,
-          style: AppTextStyles.dillemaDisplay.copyWith(
-            color: AppColors.black,
+        child: Center(
+          child: Text(
+            widget.titleText,
+            style: AppTextStyles.dillemaDisplay.copyWith(
+              color: AppColors.black,
+            ),
           ),
         ),
       ),
