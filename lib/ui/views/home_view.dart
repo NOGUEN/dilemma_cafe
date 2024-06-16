@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors
+
 import 'package:dillema_cafe/core/constants/app_constants.dart';
 import 'package:dillema_cafe/ui/design_system/font_styles.dart';
 import 'package:dillema_cafe/ui/widgets/dillema_list_cell.dart';
@@ -29,11 +31,12 @@ class HomeView extends StatelessWidget {
             centerTitle: false,
             actions: [
               IconButton(
-                  onPressed: () {},
-                  icon: const Icon(
-                    Icons.settings,
-                    size: 35,
-                  ))
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.settings,
+                  size: 35,
+                ),
+              )
             ],
           ),
           body: SingleChildScrollView(
@@ -67,7 +70,10 @@ class HomeView extends StatelessWidget {
                         ),
                         backgroundColor: AppColors.primary,
                         height: mainCellHeight,
-                        onTapFunction: () {},
+                        onTapFunction: () {
+                          Navigator.of(context)
+                              .pushNamed(RoutePaths.AllDillema);
+                        },
                       ),
                     ],
                   ),
@@ -83,12 +89,15 @@ class HomeView extends StatelessWidget {
                   ),
                   const SizedBox(height: 15.0),
                   for (int i = 0; i < 5; i++)
-                    const Padding(
-                      padding: EdgeInsets.only(bottom: 15.0),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 15.0),
                       child: DillemaListCell(
                         titleText: "송강 호떡 사주기 VS 송강호 떡 사주기",
                         likeCount: 100,
                         participateCount: 100,
+                        onTapFunction: () {
+                          Navigator.of(context).pushNamed(RoutePaths.Dillema);
+                        },
                       ),
                     ),
                 ],
