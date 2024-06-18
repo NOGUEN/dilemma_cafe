@@ -3,6 +3,8 @@ class RoutePaths {
   static const String Login = 'login';
   static const String Dillema = 'dillema';
   static const String AllDillema = 'all_dillema';
+  static const String MyPage = 'my_page';
+  static const String Ticket = 'ticket';
 }
 
 class AppValues {
