@@ -40,3 +40,40 @@ class DillemaAvatarButton extends StatelessWidget {
     );
   }
 }
+
+class DillemaAvatar extends StatelessWidget {
+  const DillemaAvatar({
+    super.key,
+    required this.imgUrl,
+    required this.size,
+  });
+
+  final String? imgUrl;
+  final double size;
+
+  @override
+  Widget build(BuildContext context) {
+    return imgUrl == null
+        ? Container(
+            width: size,
+            height: size,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(50),
+              color: AppColors.primary,
+            ),
+            child: const Icon(
+              Icons.person,
+              color: AppColors.white,
+            ),
+          )
+        : ClipRRect(
+            borderRadius: BorderRadius.circular(50),
+            child: Image.network(
+              imgUrl!,
+              fit: BoxFit.fill,
+              width: size,
+              height: size,
+            ),
+          );
+  }
+}

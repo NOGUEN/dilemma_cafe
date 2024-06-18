@@ -14,17 +14,13 @@ class DillemaFilterTapbar extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         children: [
           DillemaFilterButton(
-            titleText: "필터1",
+            titleText: "개별 딜레마",
             isTapped: true,
             onTapFunction: () {},
           ),
+          const SizedBox(width: 10),
           DillemaFilterButton(
-            titleText: "필터1",
-            isTapped: false,
-            onTapFunction: () {},
-          ),
-          DillemaFilterButton(
-            titleText: "필터1",
+            titleText: "모음 딜레마",
             isTapped: false,
             onTapFunction: () {},
           ),

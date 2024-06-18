@@ -2,6 +2,7 @@
 
 import 'package:dillema_cafe/core/constants/app_constants.dart';
 import 'package:dillema_cafe/core/viewmodels/dillema_viewmodel.dart';
+import 'package:dillema_cafe/ui/design_system/app_colors.dart';
 import 'package:dillema_cafe/ui/widgets/dillema_cafe_button.dart';
 import 'package:dillema_cafe/ui/widgets/dillema_pick_button.dart';
 import 'package:dillema_cafe/ui/widgets/dillema_textfield.dart';
@@ -28,35 +29,51 @@ class _DillemaViewState extends State<DillemaView> {
       builder: (BuildContext context, DillemaViewModel model, _) {
         return Scaffold(
           appBar: AppBar(),
-          body: Stack(
+          body: Column(
             children: [
-              Column(
+              Stack(
                 children: [
-                  DillemaPickButton(
-                    height: dillemaPickButtonHeight,
-                    imgUrl: null,
-                    titleText: "titleText",
-                    isTapped: model.chosenDillema[0],
-                    onTapFunction: () {
-                      setState(
-                        () {
-                          model.pickDillema(0);
+                  Column(
+                    children: [
+                      DillemaPickButton(
+                        height: dillemaPickButtonHeight,
+                        imgUrl: null,
+                        titleText: "titleText",
+                        isTapped: model.chosenDillema[0],
+                        onTapFunction: () {
+                          setState(
+                            () {
+                              model.pickDillema(0);
+                            },
+                          );
                         },
-                      );
-                    },
+                      ),
+                      DillemaPickButton(
+                        height: dillemaPickButtonHeight,
+                        imgUrl: null,
+                        titleText: "titleText",
+                        isTapped: model.chosenDillema[1],
+                        onTapFunction: () {
+                          setState(
+                            () {
+                              model.pickDillema(1);
+                            },
+                          );
+                        },
+                      ),
+                    ],
                   ),
-                  DillemaPickButton(
-                    height: dillemaPickButtonHeight,
-                    imgUrl: null,
-                    titleText: "titleText",
-                    isTapped: model.chosenDillema[1],
-                    onTapFunction: () {
-                      setState(
-                        () {
-                          model.pickDillema(1);
-                        },
-                      );
-                    },
+                  const Positioned.fill(
+                    child: Center(
+                      child: Text(
+                        "VS",
+                        style: TextStyle(
+                          fontFamily: "Jalnan",
+                          fontSize: 30,
+                          color: AppColors.white,
+                        ),
+                      ),
+                    ),
                   ),
                 ],
               ),

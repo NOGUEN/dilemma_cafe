@@ -2,6 +2,7 @@
 
 import 'package:dillema_cafe/core/constants/app_constants.dart';
 import 'package:dillema_cafe/ui/design_system/font_styles.dart';
+import 'package:dillema_cafe/ui/widgets/dillema_avatar_button.dart';
 import 'package:dillema_cafe/ui/widgets/dillema_list_cell.dart';
 import 'package:flutter/material.dart';
 import 'package:dillema_cafe/ui/design_system/app_colors.dart';
@@ -30,13 +31,15 @@ class HomeView extends StatelessWidget {
             ),
             centerTitle: false,
             actions: [
-              IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.settings,
-                  size: 35,
+              Padding(
+                padding: const EdgeInsets.only(right: 15.0),
+                child: DillemaAvatarButton(
+                  onTapFunction: () {
+                    Navigator.of(context).pushNamed(RoutePaths.MyPage);
+                  },
+                  imgUrl: null,
                 ),
-              )
+              ),
             ],
           ),
           body: SingleChildScrollView(
