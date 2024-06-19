@@ -2,12 +2,26 @@ import 'package:dillema_cafe/ui/design_system/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:dillema_cafe/core/constants/app_constants.dart';
 import 'package:dillema_cafe/provider_setup.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:provider/provider.dart';
 import 'package:dillema_cafe/ui/router.dart' as router;
+import 'package:supabase_flutter/supabase_flutter.dart';
 
-void main() {
+Future<void> main() async {
+  await dotenv.load(fileName: '.env');
+
+  String baseUrl = dotenv.env['BASE_URL'] ?? "";
+  String anonKey = dotenv.env['ANON_KEY'] ?? "";
+  await Supabase.initialize(
+    url: baseUrl,
+    anonKey: anonKey,
+  );
+
   runApp(const MyApp());
 }
+
+// // Get a reference your Supabase client
+// final supabase = Supabase.instance.client;
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
