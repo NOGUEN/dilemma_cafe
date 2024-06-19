@@ -60,7 +60,7 @@ class _DillemaPickButtonState extends State<DillemaPickButton> {
               alignment: Alignment.center,
               child: Text(
                 widget.titleText,
-                style: AppTextStyles.dillemaDisplay.copyWith(
+                style: AppTextStyles.dillemaDisplay1.copyWith(
                   color: AppColors.white,
                 ),
               ),
