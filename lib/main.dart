@@ -5,23 +5,23 @@ import 'package:dillema_cafe/provider_setup.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:provider/provider.dart';
 import 'package:dillema_cafe/ui/router.dart' as router;
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 Future<void> main() async {
   await dotenv.load(fileName: '.env');
+  SharedPreferences prefs = await SharedPreferences.getInstance();
 
-  String baseUrl = dotenv.env['BASE_URL'] ?? "";
-  String anonKey = dotenv.env['ANON_KEY'] ?? "";
+  prefs.setString('BASE_URL', dotenv.env['BASE_URL'] ?? "");
+  prefs.setString('ANON_KEY', dotenv.env['ANON_KEY'] ?? "");
+
   await Supabase.initialize(
-    url: baseUrl,
-    anonKey: anonKey,
+    url: prefs.getString('BASE_URL') ?? '',
+    anonKey: prefs.getString('ANON_KEY') ?? '',
   );
 
   runApp(const MyApp());
 }
-
-// // Get a reference your Supabase client
-// final supabase = Supabase.instance.client;
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -46,7 +46,7 @@ class MyApp extends StatelessWidget {
             ),
           ),
         ),
-        initialRoute: RoutePaths.Home,
+        initialRoute: RoutePaths.Login,
         onGenerateRoute: router.Router.generateRoute,
       ),
     );
