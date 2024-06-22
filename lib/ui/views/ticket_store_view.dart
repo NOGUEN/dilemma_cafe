@@ -15,6 +15,8 @@ class TicketStoreView extends StatelessWidget {
       model: TicketStoreViewmodel(),
       onModelReady: (TicketStoreViewmodel model) => model.initModel(),
       builder: (BuildContext context, TicketStoreViewmodel model, _) {
+        model.fetchTickets();
+
         return Scaffold(
           appBar: AppBar(
             centerTitle: false,
@@ -29,31 +31,37 @@ class TicketStoreView extends StatelessWidget {
           body: SingleChildScrollView(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Column(
-                children: [
-                  const SizedBox(height: 20),
-                  SvgPicture.asset(
-                    "assets/image/ticket_icon.svg",
-                    colorFilter:
-                        ColorFilter.mode(AppColors.primary, BlendMode.srcIn),
-                    width: 150,
-                  ),
-                  const SizedBox(height: 20),
-                  Text(
-                    "티켓을 구매해서 나만의 딜레마를 게재해보세요!",
-                    style: AppTextStyles.subhead3Bold
-                        .copyWith(color: AppColors.white),
-                  ),
-                  const SizedBox(height: 30),
-                  for (int i = 1; i <= 5; i++)
-                    Padding(
-                      padding: const EdgeInsets.only(top: 15),
-                      child: TicketListCell(
-                        ticketCount: i * 10,
-                        cost: i * 1000,
-                      ),
+              child: SizedBox(
+                width: double.infinity,
+                child: Column(
+                  children: [
+                    const SizedBox(height: 20),
+                    SvgPicture.asset(
+                      "assets/image/ticket_icon.svg",
+                      colorFilter: const ColorFilter.mode(
+                          AppColors.primary, BlendMode.srcIn),
+                      width: 150,
                     ),
-                ],
+                    const SizedBox(height: 20),
+                    Text(
+                      "티켓을 구매해서 나만의 딜레마를 게재해보세요!",
+                      style: AppTextStyles.subhead3Bold
+                          .copyWith(color: AppColors.white),
+                    ),
+                    const SizedBox(height: 30),
+                    if (model.tickets.isEmpty)
+                      const CircularProgressIndicator(color: AppColors.primary),
+                    if (model.tickets.isNotEmpty)
+                      for (var ticket in model.tickets)
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 15),
+                          child: TicketListCell(
+                            ticketCount: ticket.ticketcount,
+                            cost: ticket.cost,
+                          ),
+                        ),
+                  ],
+                ),
               ),
             ),
           ),

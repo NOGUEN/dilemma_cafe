@@ -1,10 +1,16 @@
 import 'package:dillema_cafe/core/constants/app_constants.dart';
+import 'package:dillema_cafe/core/viewmodels/all_dillema_viewmodel.dart';
 import 'package:dillema_cafe/ui/design_system/app_colors.dart';
 import 'package:dillema_cafe/ui/design_system/font_styles.dart';
 import 'package:flutter/material.dart';
 
 class DillemaFilterTapbar extends StatelessWidget {
-  const DillemaFilterTapbar({super.key});
+  const DillemaFilterTapbar({
+    super.key,
+    required this.allDillemaViewModel,
+  });
+
+  final AllDillemaViewModel allDillemaViewModel;
 
   @override
   Widget build(BuildContext context) {
@@ -15,14 +21,18 @@ class DillemaFilterTapbar extends StatelessWidget {
         children: [
           DillemaFilterButton(
             titleText: "개별 딜레마",
-            isTapped: true,
-            onTapFunction: () {},
+            isTapped: allDillemaViewModel.tapped[0],
+            onTapFunction: () {
+              allDillemaViewModel.changeDillemaType(0);
+            },
           ),
           const SizedBox(width: 10),
           DillemaFilterButton(
             titleText: "모음 딜레마",
-            isTapped: false,
-            onTapFunction: () {},
+            isTapped: allDillemaViewModel.tapped[1],
+            onTapFunction: () {
+              allDillemaViewModel.changeDillemaType(1);
+            },
           ),
         ],
       ),

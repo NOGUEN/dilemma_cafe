@@ -80,7 +80,7 @@ class HomeView extends StatelessWidget {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 20.0),
+                  const SizedBox(height: 30.0),
                   Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
@@ -91,18 +91,29 @@ class HomeView extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 15.0),
-                  for (int i = 0; i < 5; i++)
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 15.0),
-                      child: DillemaListCell(
-                        titleText: "송강 호떡 사주기 VS 송강호 떡 사주기",
-                        likeCount: 100,
-                        participateCount: 100,
-                        onTapFunction: () {
-                          Navigator.of(context).pushNamed(RoutePaths.Dillema);
-                        },
+                  if (model.popularDillemas.isEmpty)
+                    const SizedBox(
+                      height: 150,
+                      child: Center(
+                        child: CircularProgressIndicator(
+                          color: AppColors.primary,
+                        ),
                       ),
                     ),
+                  if (model.popularDillemas.isNotEmpty)
+                    for (var dillema in model.popularDillemas)
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 15.0),
+                        child: DillemaListCell(
+                          titleText: dillema.title,
+                          likeCount: 0,
+                          participateCount: 100,
+                          onTapFunction: () {
+                            Navigator.of(context).pushNamed(RoutePaths.Dillema,
+                                arguments: dillema);
+                          },
+                        ),
+                      ),
                 ],
               ),
             ),

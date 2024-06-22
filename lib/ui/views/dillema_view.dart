@@ -1,6 +1,7 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:dillema_cafe/core/constants/app_constants.dart';
+import 'package:dillema_cafe/core/models/json_models/dillema_model.dart';
 import 'package:dillema_cafe/core/viewmodels/dillema_viewmodel.dart';
 import 'package:dillema_cafe/ui/design_system/app_colors.dart';
 import 'package:dillema_cafe/ui/widgets/dillema_cafe_button.dart';
@@ -10,12 +11,17 @@ import 'package:flutter/material.dart';
 import 'package:dillema_cafe/ui/widgets/base_widget.dart';
 
 class DillemaView extends StatefulWidget {
+  DillemaView({
+    super.key,
+    required this.dillemaModel,
+  });
+
   @override
   State<DillemaView> createState() => _DillemaViewState();
 
-  bool isTapped = false;
+  final DillemaModel dillemaModel;
 
-  DillemaView({super.key});
+  bool isTapped = false;
 }
 
 class _DillemaViewState extends State<DillemaView> {
@@ -37,8 +43,8 @@ class _DillemaViewState extends State<DillemaView> {
                     children: [
                       DillemaPickButton(
                         height: dillemaPickButtonHeight,
-                        imgUrl: null,
-                        titleText: "titleText",
+                        imgUrl: widget.dillemaModel.image1,
+                        titleText: widget.dillemaModel.dillema1,
                         isTapped: model.chosenDillema[0],
                         onTapFunction: () {
                           setState(
@@ -50,8 +56,8 @@ class _DillemaViewState extends State<DillemaView> {
                       ),
                       DillemaPickButton(
                         height: dillemaPickButtonHeight,
-                        imgUrl: null,
-                        titleText: "titleText",
+                        imgUrl: widget.dillemaModel.image2,
+                        titleText: widget.dillemaModel.dillema2,
                         isTapped: model.chosenDillema[1],
                         onTapFunction: () {
                           setState(

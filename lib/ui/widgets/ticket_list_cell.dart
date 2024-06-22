@@ -11,7 +11,7 @@ class TicketListCell extends StatelessWidget {
     required this.ticketCount,
   });
 
-  final int cost;
+  final double cost;
   final int ticketCount;
 
   @override
