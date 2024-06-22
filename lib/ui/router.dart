@@ -1,4 +1,5 @@
 import 'package:dillema_cafe/core/constants/app_constants.dart';
+import 'package:dillema_cafe/core/models/json_models/dillema_model.dart';
 import 'package:dillema_cafe/ui/views/all_dillema_view.dart';
 import 'package:dillema_cafe/ui/views/dillema_view.dart';
 import 'package:dillema_cafe/ui/views/login_view.dart';
@@ -13,7 +14,12 @@ class Router {
       case RoutePaths.Home:
         return MaterialPageRoute(builder: (_) => HomeView());
       case RoutePaths.Dillema:
-        return MaterialPageRoute(builder: (_) => DillemaView());
+        final dillema = settings.arguments as DillemaModel;
+
+        return MaterialPageRoute(
+            builder: (_) => DillemaView(
+                  dillemaModel: dillema,
+                ));
       case RoutePaths.AllDillema:
         return MaterialPageRoute(builder: (_) => AllDillemaView());
       case RoutePaths.MyPage:
