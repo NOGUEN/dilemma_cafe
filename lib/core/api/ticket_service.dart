@@ -13,4 +13,10 @@ abstract class TicketService {
     @Header('apikey') String token,
     @Header('Authorization') String auth,
   );
+
+  @GET('/rpc/get_all_tickets')
+  Future<List<TicketModel>> getTickets2(
+    @Header('apikey') String token,
+    @Header('Authorization') String auth,
+  );
 }

@@ -7,12 +7,12 @@ part of 'ticket_model.dart';
 // **************************************************************************
 
 TicketModel _$TicketModelFromJson(Map<String, dynamic> json) => TicketModel(
-      ticketcount: (json['ticketcount'] as num).toInt(),
+      ticket_count: (json['ticket_count'] as num).toInt(),
       cost: (json['cost'] as num).toDouble(),
     );
 
 Map<String, dynamic> _$TicketModelToJson(TicketModel instance) =>
     <String, dynamic>{
-      'ticketcount': instance.ticketcount,
+      'ticket_count': instance.ticket_count,
       'cost': instance.cost,
     };

@@ -56,7 +56,7 @@ class TicketStoreView extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.only(bottom: 15),
                           child: TicketListCell(
-                            ticketCount: ticket.ticketcount,
+                            ticketCount: ticket.ticket_count,
                             cost: ticket.cost,
                           ),
                         ),

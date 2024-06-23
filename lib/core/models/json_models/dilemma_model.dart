@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'dilemma_model.g.dart';
@@ -5,29 +7,29 @@ part 'dilemma_model.g.dart';
 @JsonSerializable()
 class DilemmaModel {
   final String title;
-  final int dillemaId;
+  final int dilemma_id;
   final String? description;
   final String dilemma1;
   final String dilemma2;
   final String? image1;
   final String? image2;
   final int like;
-  final DateTime uploadDate;
-  final String authorNickname;
-  final int authorId;
+  final DateTime upload_date;
+  final String author_nickname;
+  final int author_id;
 
   DilemmaModel({
     required this.title,
-    required this.dillemaId,
+    required this.dilemma_id,
     this.description,
     required this.dilemma1,
     required this.dilemma2,
     this.image1,
     this.image2,
     required this.like,
-    required this.uploadDate,
-    required this.authorNickname,
-    required this.authorId,
+    required this.upload_date,
+    required this.author_nickname,
+    required this.author_id,
   });
 
   factory DilemmaModel.fromJson(Map<String, dynamic> json) =>
