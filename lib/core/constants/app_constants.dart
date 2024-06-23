@@ -1,8 +1,8 @@
 class RoutePaths {
   static const String Home = 'home';
   static const String Login = '/login';
-  static const String Dillema = 'dillema';
-  static const String AllDillema = 'all_dillema';
+  static const String Dilemma = 'dilemma';
+  static const String AllDilemma = 'all_dilemma';
   static const String MyPage = 'my_page';
   static const String Ticket = 'ticket';
 }

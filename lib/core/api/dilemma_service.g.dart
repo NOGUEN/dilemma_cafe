@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'dillema_service.dart';
+part of 'dilemma_service.dart';
 
 // **************************************************************************
 // RetrofitGenerator
@@ -8,8 +8,8 @@ part of 'dillema_service.dart';
 
 // ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers
 
-class _DillemaService implements DillemaService {
-  _DillemaService(
+class _DilemmaService implements DilemmaService {
+  _DilemmaService(
     this._dio, {
     this.baseUrl,
   }) {
@@ -21,7 +21,7 @@ class _DillemaService implements DillemaService {
   String? baseUrl;
 
   @override
-  Future<List<DillemaModel>> getPopularDillemaList(
+  Future<List<DilemmaModel>> getPopularDilemmaList(
     String token,
     String auth,
   ) async {
@@ -34,14 +34,14 @@ class _DillemaService implements DillemaService {
     _headers.removeWhere((k, v) => v == null);
     const Map<String, dynamic>? _data = null;
     final _result = await _dio
-        .fetch<List<dynamic>>(_setStreamType<List<DillemaModel>>(Options(
+        .fetch<List<dynamic>>(_setStreamType<List<DilemmaModel>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
             .compose(
               _dio.options,
-              '/Dillema',
+              '/Dilemma',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -51,13 +51,13 @@ class _DillemaService implements DillemaService {
               baseUrl,
             ))));
     var value = _result.data!
-        .map((dynamic i) => DillemaModel.fromJson(i as Map<String, dynamic>))
+        .map((dynamic i) => DilemmaModel.fromJson(i as Map<String, dynamic>))
         .toList();
     return value;
   }
 
   @override
-  Future<List<DillemaModel>> getDillemaList(
+  Future<List<DilemmaModel>> getDilemmaList(
     String token,
     String auth,
   ) async {
@@ -70,14 +70,14 @@ class _DillemaService implements DillemaService {
     _headers.removeWhere((k, v) => v == null);
     const Map<String, dynamic>? _data = null;
     final _result = await _dio
-        .fetch<List<dynamic>>(_setStreamType<List<DillemaModel>>(Options(
+        .fetch<List<dynamic>>(_setStreamType<List<DilemmaModel>>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
             .compose(
               _dio.options,
-              '/Dillema',
+              '/Dilemma',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -87,7 +87,7 @@ class _DillemaService implements DillemaService {
               baseUrl,
             ))));
     var value = _result.data!
-        .map((dynamic i) => DillemaModel.fromJson(i as Map<String, dynamic>))
+        .map((dynamic i) => DilemmaModel.fromJson(i as Map<String, dynamic>))
         .toList();
     return value;
   }

@@ -1,20 +1,20 @@
 import 'package:dillema_cafe/core/constants/app_constants.dart';
-import 'package:dillema_cafe/core/models/json_models/dillema_model.dart';
-import 'package:dillema_cafe/core/viewmodels/all_dillema_viewmodel.dart';
-import 'package:dillema_cafe/ui/widgets/dillema_filter_tapbar.dart';
-import 'package:dillema_cafe/ui/widgets/dillema_list_cell.dart';
-import 'package:dillema_cafe/ui/widgets/dillema_textfield.dart';
+import 'package:dillema_cafe/core/models/json_models/dilemma_model.dart';
+import 'package:dillema_cafe/core/viewmodels/all_dilemma_viewmodel.dart';
+import 'package:dillema_cafe/ui/widgets/dilemma_filter_tapbar.dart';
+import 'package:dillema_cafe/ui/widgets/dilemma_list_cell.dart';
+import 'package:dillema_cafe/ui/widgets/dilemma_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:dillema_cafe/ui/design_system/app_colors.dart';
 import 'package:dillema_cafe/ui/widgets/base_widget.dart';
 
-class AllDillemaView extends StatelessWidget {
+class AllDilemmaView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return BaseWidget<AllDillemaViewModel>(
-      model: AllDillemaViewModel(),
-      onModelReady: (AllDillemaViewModel model) => model.initModel(),
-      builder: (BuildContext context, AllDillemaViewModel model, _) {
+    return BaseWidget<AllDilemmaViewModel>(
+      model: AllDilemmaViewModel(),
+      onModelReady: (AllDilemmaViewModel model) => model.initModel(),
+      builder: (BuildContext context, AllDilemmaViewModel model, _) {
         return Scaffold(
           appBar: AppBar(
             title: const Text(
@@ -32,28 +32,28 @@ class AllDillemaView extends StatelessWidget {
                   horizontal: AppValues.horizontalPadding),
               child: Column(
                 children: [
-                  const DillemaSearchTextField(),
+                  const DilemmaSearchTextField(),
                   const SizedBox(height: 15),
-                  DillemaFilterTapbar(
-                    allDillemaViewModel: model,
+                  DilemmaFilterTapbar(
+                    allDilemmaViewModel: model,
                   ),
                   const SizedBox(height: 15),
                   if (model.tapped[0] == true)
-                    if (model.allDillemas.isEmpty)
+                    if (model.allDilemmas.isEmpty)
                       const CircularProgressIndicator(color: AppColors.primary),
                   if (model.tapped[0] == true)
-                    if (model.allDillemas.isNotEmpty)
-                      for (DillemaModel dillema in model.allDillemas)
+                    if (model.allDilemmas.isNotEmpty)
+                      for (DilemmaModel dilemma in model.allDilemmas)
                         Padding(
                           padding: const EdgeInsets.only(bottom: 15),
-                          child: DillemaListCell(
-                            titleText: dillema.title,
-                            likeCount: dillema.like,
+                          child: DilemmaListCell(
+                            titleText: dilemma.title,
+                            likeCount: dilemma.like,
                             participateCount: 0,
                             onTapFunction: () {
                               Navigator.of(context).pushNamed(
-                                RoutePaths.Dillema,
-                                arguments: dillema,
+                                RoutePaths.Dilemma,
+                                arguments: dilemma,
                               );
                             },
                           ),

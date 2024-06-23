@@ -2,8 +2,8 @@ import 'package:dillema_cafe/ui/design_system/app_colors.dart';
 import 'package:dillema_cafe/ui/design_system/font_styles.dart';
 import 'package:flutter/material.dart';
 
-class DillemaListCell extends StatelessWidget {
-  const DillemaListCell({
+class DilemmaListCell extends StatelessWidget {
+  const DilemmaListCell({
     super.key,
     required this.titleText,
     required this.likeCount,

@@ -1,7 +1,7 @@
 import 'package:dillema_cafe/core/viewmodels/base_viewmodel.dart';
 import 'package:flutter/material.dart';
 
-class DillemaViewModel extends BaseModel {
+class DilemmaViewModel extends BaseModel {
   // HomeViewModel({
   //   required this.postApi,
   // });
@@ -10,21 +10,21 @@ class DillemaViewModel extends BaseModel {
 
   // List<Post> posts = <Post>[];
 
-  List<bool> chosenDillema = [false, false];
+  List<bool> chosenDilemma = [false, false];
   TextEditingController textEditingController = TextEditingController();
 
-  void pickDillema(int index) {
+  void pickDilemma(int index) {
     if (index == 0) {
-      chosenDillema[0] = true;
-      chosenDillema[1] = false;
+      chosenDilemma[0] = true;
+      chosenDilemma[1] = false;
     } else {
-      chosenDillema[0] = false;
-      chosenDillema[1] = true;
+      chosenDilemma[0] = false;
+      chosenDilemma[1] = true;
     }
   }
 
   bool checkSubmitAvailable() {
-    if (chosenDillema.any((element) => element == true) == false) {
+    if (chosenDilemma.any((element) => element == true) == false) {
       return false;
     } else {
       return true;

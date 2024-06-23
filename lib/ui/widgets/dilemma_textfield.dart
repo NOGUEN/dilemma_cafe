@@ -3,8 +3,8 @@ import 'package:dillema_cafe/ui/design_system/app_colors.dart';
 import 'package:dillema_cafe/ui/design_system/font_styles.dart';
 import 'package:flutter/material.dart';
 
-class DillemaTextfield extends StatelessWidget {
-  const DillemaTextfield({
+class DilemmaTextfield extends StatelessWidget {
+  const DilemmaTextfield({
     super.key,
     required this.textEditingController,
   });
@@ -37,8 +37,8 @@ class DillemaTextfield extends StatelessWidget {
   }
 }
 
-class DillemaSearchTextField extends StatelessWidget {
-  const DillemaSearchTextField({super.key});
+class DilemmaSearchTextField extends StatelessWidget {
+  const DilemmaSearchTextField({super.key});
 
   @override
   Widget build(BuildContext context) {

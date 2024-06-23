@@ -1,25 +1,25 @@
-import 'package:dillema_cafe/core/api/dillema_service.dart';
-import 'package:dillema_cafe/core/models/json_models/dillema_model.dart';
+import 'package:dillema_cafe/core/api/dilemma_service.dart';
+import 'package:dillema_cafe/core/models/json_models/dilemma_model.dart';
 import 'package:dillema_cafe/core/viewmodels/base_viewmodel.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class AllDillemaViewModel extends BaseModel {
+class AllDilemmaViewModel extends BaseModel {
   List<bool> tapped = [true, false];
-  List<DillemaModel> allDillemas = List.empty(growable: true);
+  List<DilemmaModel> allDilemmas = List.empty(growable: true);
 
   @override
   Future<void> initModel() async {
     setBusy(true);
 
-    await fetchAllDillemas();
+    await fetchAllDilemmas();
 
     setBusy(false);
   }
 
-  Future<void> fetchAllDillemas() async {
+  Future<void> fetchAllDilemmas() async {
     Dio dio = Dio();
     dio.interceptors.add(PrettyDioLogger());
 
@@ -39,17 +39,17 @@ class AllDillemaViewModel extends BaseModel {
     String anonKey = prefs.getString('ANON_KEY') ?? '';
 
     try {
-      List<DillemaModel> allDillema = await DillemaService(dio).getDillemaList(
+      List<DilemmaModel> allDilemma = await DilemmaService(dio).getDilemmaList(
         anonKey,
         'Bearer $anonKey',
       );
-      allDillemas = allDillema;
+      allDilemmas = allDilemma;
     } catch (e) {
       debugPrint("anonKey $anonKey ${e.toString()}");
     }
   }
 
-  void changeDillemaType(int index) {
+  void changeDilemmaType(int index) {
     for (int i = 0; i < tapped.length; i++) {
       if (i == index) {
         tapped[i] = true;

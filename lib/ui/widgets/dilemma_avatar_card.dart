@@ -1,11 +1,11 @@
 import 'package:dillema_cafe/core/constants/app_constants.dart';
 import 'package:dillema_cafe/ui/design_system/app_colors.dart';
 import 'package:dillema_cafe/ui/design_system/font_styles.dart';
-import 'package:dillema_cafe/ui/widgets/dillema_avatar_button.dart';
+import 'package:dillema_cafe/ui/widgets/dilemma_avatar_button.dart';
 import 'package:flutter/material.dart';
 
-class DillemaAvatarCard extends StatelessWidget {
-  const DillemaAvatarCard({
+class DilemmaAvatarCard extends StatelessWidget {
+  const DilemmaAvatarCard({
     super.key,
     required this.height,
   });

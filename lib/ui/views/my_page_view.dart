@@ -2,7 +2,7 @@
 
 import 'package:dillema_cafe/core/viewmodels/my_page_viewmodel.dart';
 import 'package:dillema_cafe/ui/design_system/app_colors.dart';
-import 'package:dillema_cafe/ui/widgets/dillema_avatar_card.dart';
+import 'package:dillema_cafe/ui/widgets/dilemma_avatar_card.dart';
 import 'package:dillema_cafe/ui/widgets/user_info_card.dart';
 import 'package:flutter/material.dart';
 import 'package:dillema_cafe/ui/widgets/base_widget.dart';
@@ -31,7 +31,7 @@ class MyPageView extends StatelessWidget {
               child: Column(
                 children: [
                   SizedBox(height: 15),
-                  DillemaAvatarCard(
+                  DilemmaAvatarCard(
                     height: 200,
                   ),
                   SizedBox(height: 15),

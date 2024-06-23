@@ -27,7 +27,7 @@ class LoginView extends StatelessWidget {
                   children: [
                     const Spacer(),
                     SvgPicture.asset(
-                      'assets/image/dillema_icon.svg',
+                      'assets/image/dilemma_icon.svg',
                       colorFilter: const ColorFilter.mode(
                         AppColors.primary,
                         BlendMode.srcIn,
@@ -74,7 +74,7 @@ class LoginView extends StatelessWidget {
                     LoginButton(
                       height: 50,
                       leadingIcon:
-                          SvgPicture.asset("assets/image/dillema_icon.svg"),
+                          SvgPicture.asset("assets/image/dilemma_icon.svg"),
                       buttonTitle: "애플로 로그인",
                       onTapFunction: () {},
                       backgroundColor: AppColors.black,

@@ -2,8 +2,8 @@ import 'package:dillema_cafe/ui/design_system/app_colors.dart';
 import 'package:dillema_cafe/ui/design_system/font_styles.dart';
 import 'package:flutter/material.dart';
 
-class DillemaPickButton extends StatefulWidget {
-  const DillemaPickButton({
+class DilemmaPickButton extends StatefulWidget {
+  const DilemmaPickButton({
     super.key,
     required this.height,
     required this.imgUrl,
@@ -19,10 +19,10 @@ class DillemaPickButton extends StatefulWidget {
   final void Function() onTapFunction;
 
   @override
-  State<DillemaPickButton> createState() => _DillemaPickButtonState();
+  State<DilemmaPickButton> createState() => _DillemaPickButtonState();
 }
 
-class _DillemaPickButtonState extends State<DillemaPickButton> {
+class _DillemaPickButtonState extends State<DilemmaPickButton> {
   late Widget image;
 
   @override

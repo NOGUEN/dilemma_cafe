@@ -2,8 +2,8 @@
 
 import 'package:dillema_cafe/core/constants/app_constants.dart';
 import 'package:dillema_cafe/ui/design_system/font_styles.dart';
-import 'package:dillema_cafe/ui/widgets/dillema_avatar_button.dart';
-import 'package:dillema_cafe/ui/widgets/dillema_list_cell.dart';
+import 'package:dillema_cafe/ui/widgets/dilemma_avatar_button.dart';
+import 'package:dillema_cafe/ui/widgets/dilemma_list_cell.dart';
 import 'package:flutter/material.dart';
 import 'package:dillema_cafe/ui/design_system/app_colors.dart';
 import 'package:dillema_cafe/ui/widgets/main_cell.dart';
@@ -33,7 +33,7 @@ class HomeView extends StatelessWidget {
             actions: [
               Padding(
                 padding: const EdgeInsets.only(right: 15.0),
-                child: DillemaAvatarButton(
+                child: DilemmaAvatarButton(
                   onTapFunction: () {
                     Navigator.of(context).pushNamed(RoutePaths.MyPage);
                   },
@@ -54,13 +54,13 @@ class HomeView extends StatelessWidget {
                         titleText: "오늘의 딜레마",
                         descriptionText: "오늘의 추천 딜레마를 확인해봐요!",
                         bottomImg: SvgPicture.asset(
-                          "assets/image/dillema_icon.svg",
+                          "assets/image/dilemma_icon.svg",
                           width: 60,
                         ),
                         backgroundColor: AppColors.primary,
                         height: mainCellHeight,
                         onTapFunction: () {
-                          Navigator.of(context).pushNamed(RoutePaths.Dillema);
+                          Navigator.of(context).pushNamed(RoutePaths.Dilemma);
                         },
                       ),
                       const SizedBox(width: 20),
@@ -68,14 +68,14 @@ class HomeView extends StatelessWidget {
                         titleText: "딜레마\n전체 보기",
                         descriptionText: "지금까지 올라온 모든 딜레마를 확인해봐요!",
                         bottomImg: SvgPicture.asset(
-                          "assets/image/dillema_list_icon.svg",
+                          "assets/image/dilemma_list_icon.svg",
                           width: 40,
                         ),
                         backgroundColor: AppColors.primary,
                         height: mainCellHeight,
                         onTapFunction: () {
                           Navigator.of(context)
-                              .pushNamed(RoutePaths.AllDillema);
+                              .pushNamed(RoutePaths.AllDilemma);
                         },
                       ),
                     ],
@@ -104,12 +104,12 @@ class HomeView extends StatelessWidget {
                     for (var dillema in model.popularDillemas)
                       Padding(
                         padding: const EdgeInsets.only(bottom: 15.0),
-                        child: DillemaListCell(
+                        child: DilemmaListCell(
                           titleText: dillema.title,
                           likeCount: 0,
                           participateCount: 100,
                           onTapFunction: () {
-                            Navigator.of(context).pushNamed(RoutePaths.Dillema,
+                            Navigator.of(context).pushNamed(RoutePaths.Dilemma,
                                 arguments: dillema);
                           },
                         ),

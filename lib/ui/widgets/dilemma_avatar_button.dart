@@ -1,8 +1,8 @@
 import 'package:dillema_cafe/ui/design_system/app_colors.dart';
 import 'package:flutter/material.dart';
 
-class DillemaAvatarButton extends StatelessWidget {
-  const DillemaAvatarButton({
+class DilemmaAvatarButton extends StatelessWidget {
+  const DilemmaAvatarButton({
     super.key,
     required this.onTapFunction,
     required this.imgUrl,

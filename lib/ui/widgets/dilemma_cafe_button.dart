@@ -3,8 +3,8 @@ import 'package:dillema_cafe/ui/design_system/app_colors.dart';
 import 'package:dillema_cafe/ui/design_system/font_styles.dart';
 import 'package:flutter/material.dart';
 
-class DillemaCafeButton extends StatefulWidget {
-  const DillemaCafeButton({
+class DilemmaCafeButton extends StatefulWidget {
+  const DilemmaCafeButton({
     super.key,
     required this.isAvailable,
     required this.height,
@@ -18,10 +18,10 @@ class DillemaCafeButton extends StatefulWidget {
   final void Function() onTapFunction;
 
   @override
-  State<DillemaCafeButton> createState() => _DillemaCafeButtonState();
+  State<DilemmaCafeButton> createState() => _DillemaCafeButtonState();
 }
 
-class _DillemaCafeButtonState extends State<DillemaCafeButton> {
+class _DillemaCafeButtonState extends State<DilemmaCafeButton> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(

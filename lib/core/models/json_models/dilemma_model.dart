@@ -1,14 +1,14 @@
 import 'package:json_annotation/json_annotation.dart';
 
-part 'dillema_model.g.dart';
+part 'dilemma_model.g.dart';
 
 @JsonSerializable()
-class DillemaModel {
+class DilemmaModel {
   final String title;
   final int dillemaId;
   final String? description;
-  final String dillema1;
-  final String dillema2;
+  final String dilemma1;
+  final String dilemma2;
   final String? image1;
   final String? image2;
   final int like;
@@ -16,12 +16,12 @@ class DillemaModel {
   final String authorNickname;
   final int authorId;
 
-  DillemaModel({
+  DilemmaModel({
     required this.title,
     required this.dillemaId,
     this.description,
-    required this.dillema1,
-    required this.dillema2,
+    required this.dilemma1,
+    required this.dilemma2,
     this.image1,
     this.image2,
     required this.like,
@@ -30,8 +30,8 @@ class DillemaModel {
     required this.authorId,
   });
 
-  factory DillemaModel.fromJson(Map<String, dynamic> json) =>
-      _$DillemaModelFromJson(json);
+  factory DilemmaModel.fromJson(Map<String, dynamic> json) =>
+      _$DilemmaModelFromJson(json);
 
-  Map<String, dynamic> toJson() => _$DillemaModelToJson(this);
+  Map<String, dynamic> toJson() => _$DilemmaModelToJson(this);
 }

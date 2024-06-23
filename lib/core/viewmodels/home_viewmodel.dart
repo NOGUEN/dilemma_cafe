@@ -1,5 +1,5 @@
-import 'package:dillema_cafe/core/api/dillema_service.dart';
-import 'package:dillema_cafe/core/models/json_models/dillema_model.dart';
+import 'package:dillema_cafe/core/api/dilemma_service.dart';
+import 'package:dillema_cafe/core/models/json_models/dilemma_model.dart';
 import 'package:dillema_cafe/core/viewmodels/base_viewmodel.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
@@ -13,18 +13,18 @@ class HomeViewModel extends BaseModel {
 
   // final PostApi postApi;
 
-  List<DillemaModel> popularDillemas = List.empty(growable: true);
+  List<DilemmaModel> popularDillemas = List.empty(growable: true);
 
   @override
   Future<void> initModel() async {
     setBusy(true);
 
-    await fetchPopularDillema();
+    await fetchPopularDilemma();
 
     setBusy(false);
   }
 
-  Future<void> fetchPopularDillema() async {
+  Future<void> fetchPopularDilemma() async {
     Dio dio = Dio();
     dio.interceptors.add(PrettyDioLogger());
 
@@ -44,12 +44,12 @@ class HomeViewModel extends BaseModel {
     String anonKey = prefs.getString('ANON_KEY') ?? '';
 
     try {
-      List<DillemaModel> popularDillema =
-          await DillemaService(dio).getPopularDillemaList(
+      List<DilemmaModel> popularDilemma =
+          await DilemmaService(dio).getPopularDilemmaList(
         anonKey,
         'Bearer $anonKey',
       );
-      popularDillemas = popularDillema;
+      popularDillemas = popularDilemma;
     } catch (e) {
       debugPrint("anonKey $anonKey ${e.toString()}");
     }
