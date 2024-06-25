@@ -4,6 +4,7 @@ import 'package:dillema_cafe/ui/views/all_dillema_view.dart';
 import 'package:dillema_cafe/ui/views/dillema_view.dart';
 import 'package:dillema_cafe/ui/views/login_view.dart';
 import 'package:dillema_cafe/ui/views/my_page_view.dart';
+import 'package:dillema_cafe/ui/views/new_dilemma_view.dart';
 import 'package:dillema_cafe/ui/views/ticket_store_view.dart';
 import 'package:flutter/material.dart';
 import 'package:dillema_cafe/ui/views/home_view.dart';
@@ -28,6 +29,8 @@ class Router {
         return MaterialPageRoute(builder: (_) => TicketStoreView());
       case RoutePaths.Login:
         return MaterialPageRoute(builder: (_) => LoginView());
+      case RoutePaths.NewDilemma:
+        return MaterialPageRoute(builder: (_) => NewDilemmaView());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(

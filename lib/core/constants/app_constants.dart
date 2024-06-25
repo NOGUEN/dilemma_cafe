@@ -5,6 +5,7 @@ class RoutePaths {
   static const String AllDilemma = 'all_dilemma';
   static const String MyPage = 'my_page';
   static const String Ticket = 'ticket';
+  static const String NewDilemma = 'new_dilemma';
 }
 
 class AppValues {

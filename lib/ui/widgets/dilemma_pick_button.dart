@@ -1,3 +1,4 @@
+import 'package:dillema_cafe/core/constants/app_constants.dart';
 import 'package:dillema_cafe/ui/design_system/app_colors.dart';
 import 'package:dillema_cafe/ui/design_system/font_styles.dart';
 import 'package:flutter/material.dart';
@@ -38,7 +39,10 @@ class _DillemaPickButtonState extends State<DilemmaPickButton> {
       image = Container(
         height: widget.height,
         width: double.infinity,
-        color: AppColors.darkGray,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(AppValues.boxBorderRadius),
+          color: AppColors.darkGray,
+        ),
       );
     }
     super.initState();
@@ -58,10 +62,14 @@ class _DillemaPickButtonState extends State<DilemmaPickButton> {
           Positioned.fill(
             child: Align(
               alignment: Alignment.center,
-              child: Text(
-                widget.titleText,
-                style: AppTextStyles.dillemaDisplay1.copyWith(
-                  color: AppColors.white,
+              child: Padding(
+                padding: const EdgeInsets.all(20),
+                child: Text(
+                  widget.titleText,
+                  textAlign: TextAlign.center,
+                  style: AppTextStyles.dillemaDisplay1.copyWith(
+                    color: AppColors.white,
+                  ),
                 ),
               ),
             ),
@@ -76,6 +84,7 @@ class _DillemaPickButtonState extends State<DilemmaPickButton> {
                   color: AppColors.primary,
                   strokeAlign: BorderSide.strokeAlignInside,
                 ),
+                borderRadius: BorderRadius.circular(AppValues.boxBorderRadius),
               ),
             ),
         ],
